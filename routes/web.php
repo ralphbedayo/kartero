@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Inertia routes
+Route::group(['namespace' => 'Inertia'], function () {
+    //Landing Page
+    Route::group([
+        'namespace'  => 'Landing',
+        'controller' => 'LandingController'
+    ], function () {
+        Route::get('/', 'index')->name('landing.index');
+    });
+
 });
+
+//Route::get('/', function () {
+//    return view('welcome');
+//});
