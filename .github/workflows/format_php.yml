@@ -15,12 +15,10 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
-            - name: Install
-              run: composer install
-
             - name: Run php-cs-fixer
-              run: ./vendor/bin/php-cs-fixer fix
+              uses: docker://oskarstark/php-cs-fixer-ga
 
-            - uses: stefanzweifel/git-auto-commit-action@v4
-              with:
-                  commit_message: Apply php-cs-fixer changes
+#           uncomment this once decided to use auto-commit
+#            - uses: stefanzweifel/git-auto-commit-action@v4
+#              with:
+#                  commit_message: Apply php-cs-fixer changes
