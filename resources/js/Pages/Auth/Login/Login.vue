@@ -1,48 +1,24 @@
 <template>
     <div>
+        <Head>
+            <title>Login</title>
+        </Head>
         <GradientBackgroundHalf/>
         <div class="pt-24">
             <div class="flex justify-center">
                 <div class="basis-1/4 flex-col z-50">
-                    <div class="mb-6 font-bold text-center text-white">
-                        <h1 class="text-3xl">
-                            <Logo/>
-                            KARTERO
-                        </h1>
-                    </div>
+                    <Brand class="mb-6"/>
                     <Card class="bg-white">
                         <div class="mb-10">
                             <h1 class="text-4xl text-black text-center">Log In</h1>
                         </div>
                         <div>
-                            <form action="/login" method="post" @submit.prevent="login">
-                                <div class="mb-6">
-                                    <label for="user-email"
-                                           class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
-                                    <input type="email" id="user-email"
-                                           class="bg-gray-25 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                           v-model="form.email"
-                                           placeholder="Your email" required>
-                                    <div v-if="form.errors.email" class="form-error">{{ form.errors.email }}</div>
-                                </div>
-                                <div class="mb-6">
-                                    <label for="user-password"
-                                           class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Password</label>
-                                    <input type="password" id="user-password"
-                                           class="bg-gray-25 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                           v-model="form.password"
-                                           placeholder="Your secure password" required>
-                                    <div v-if="form.errors.password" class="form-error">{{ form.errors.password }}</div>
-                                </div>
+                            <form action="#" method="post" @submit.prevent="login">
+                                <TextInput class="mb-6" label="Email" id="user-email" placeholder="Your email"
+                                           v-model="form.email" :error="form.errors.email" type="email" required/>
 
-                                <div class="mb-10 flex justify-center">
-                                    <label
-                                        class="items-center cursor-pointer text-sm font-medium text-gray-900 dark:text-gray-300"
-                                        for="remember">
-                                        <input id="remember" v-model="form.remember" class="mr-1" type="checkbox"/>
-                                        <span class="text-sm">Remember Me</span>
-                                    </label>
-                                </div>
+                                <TextInput class="mb-6" label="Password" id="user-password" placeholder="Your secure password"
+                                           v-model="form.password" :error="form.errors.password" type="password" required/>
 
                                 <div class="flex justify-center">
                                     <loading-button :loading="form.processing"
@@ -66,20 +42,25 @@
 </template>
 
 <script>
-import {Link} from '@inertiajs/inertia-vue3'
-import Card from "@/Shared/Card";
-import Logo from "@/Shared/Logo";
-import LoadingButton from "@/Shared/LoadingButton";
-import GradientBackgroundHalf from "@/Shared/GradientBackgroundHalf";
+import {Head, Link} from '@inertiajs/inertia-vue3'
+import Brand from "@/Shared/Brand";
+import Card from "@/Shared/Design/Card";
+import Logo from "@/Shared/Design/Logo";
+import LoadingButton from "@/Shared/Utils/LoadingButton";
+import GradientBackgroundHalf from "@/Shared/Design/GradientBackgroundHalf";
+import TextInput from "@/Shared/Inputs/TextInput";
 
 export default {
     name: "Login",
     components: {
+        Brand,
         Card,
         Link,
         Logo,
         LoadingButton,
-        GradientBackgroundHalf
+        GradientBackgroundHalf,
+        Head,
+        TextInput
     },
     data() {
         return {

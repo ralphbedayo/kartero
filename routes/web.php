@@ -25,7 +25,7 @@ Route::group(['namespace' => 'Inertia'], function () {
 
     // Guest-forced Pages
     Route::group([
-//        'middleware' => ['guest']
+        'middleware' => ['guest']
     ], function () {
         // Auth
         Route::group([
@@ -42,6 +42,15 @@ Route::group(['namespace' => 'Inertia'], function () {
             });
 
             // Register
+            Route::group([
+                'namespace'  => 'Registration',
+                'controller' => 'RegistrationController',
+                'prefix'     => '/register'
+            ], function () {
+                Route::get('/', 'index')->name('register.index');
+                Route::post('/', 'store')->name('register.store');
+            });
+
         });
     });
 

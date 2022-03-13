@@ -50,7 +50,7 @@
 
 <script>
 import { Inertia } from '@inertiajs/inertia'
-import Logo from "@/Shared/Logo";
+import Logo from "@/Shared/Design/Logo";
 
 //@todo update this later
 const navigation = [
