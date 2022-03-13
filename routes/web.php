@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 //Inertia routes
 Route::group(['namespace' => 'Inertia'], function () {
-    //Landing Page
+    // Landing Page
     Route::group([
         'namespace'  => 'Landing',
         'controller' => 'LandingController'
@@ -23,6 +23,33 @@ Route::group(['namespace' => 'Inertia'], function () {
         Route::get('/', 'index')->name('landing.index');
     });
 
+    // Guest-forced Pages
+    Route::group([
+//        'middleware' => ['guest']
+    ], function () {
+        // Auth
+        Route::group([
+            'namespace' => 'Auth',
+        ], function () {
+            // Login
+            Route::group([
+                'namespace'  => 'Login',
+                'controller' => 'LoginController',
+                'prefix'     => '/login'
+            ], function () {
+                Route::get('/', 'index')->name('login.index');
+                Route::post('/', 'store')->name('login.store');
+            });
+
+            // Register
+        });
+    });
+
+    // Authenticated Pages
+    Route::group(['middleware' => ['auth']], function () {
+        // Home
+
+    });
 });
 
 //Route::get('/', function () {
