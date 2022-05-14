@@ -1,17 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-/*
- * This file is part of PHP CS Fixer.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
- */
-
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,52 +13,54 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Inertia routes
-Route::group(['namespace' => 'Inertia'], function (): void {
+//Inertia routes
+Route::group(['namespace' => 'Inertia'], function () {
     // Landing Page
     Route::group([
-        'namespace' => 'Landing',
-        'controller' => 'LandingController',
-    ], function (): void {
+        'namespace'  => 'Landing',
+        'controller' => 'LandingController'
+    ], function () {
         Route::get('/', 'index')->name('landing.index');
     });
 
     // Guest-forced Pages
     Route::group([
-        'middleware' => ['guest'],
-    ], function (): void {
+        'middleware' => ['guest']
+    ], function () {
         // Auth
         Route::group([
             'namespace' => 'Auth',
-        ], function (): void {
+        ], function () {
             // Login
             Route::group([
-                'namespace' => 'Login',
+                'namespace'  => 'Login',
                 'controller' => 'LoginController',
-                'prefix' => '/login',
-            ], function (): void {
+                'prefix'     => '/login'
+            ], function () {
                 Route::get('/', 'index')->name('login.index');
                 Route::post('/', 'store')->name('login.store');
             });
 
             // Register
             Route::group([
-                'namespace' => 'Registration',
+                'namespace'  => 'Registration',
                 'controller' => 'RegistrationController',
-                'prefix' => '/register',
-            ], function (): void {
+                'prefix'     => '/register'
+            ], function () {
                 Route::get('/', 'index')->name('register.index');
                 Route::post('/', 'store')->name('register.store');
             });
+
         });
     });
 
     // Authenticated Pages
-    Route::group(['middleware' => ['auth']], function (): void {
+    Route::group(['middleware' => ['auth']], function () {
         // Home
+
     });
 });
 
-// Route::get('/', function () {
+//Route::get('/', function () {
 //    return view('welcome');
-// });
+//});

@@ -1,17 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-/*
- * This file is part of PHP CS Fixer.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
- */
-
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
@@ -25,6 +13,7 @@ class Handler extends ExceptionHandler
      * @var array<int, class-string<Throwable>>
      */
     protected $dontReport = [
+        //
     ];
 
     /**
@@ -40,10 +29,13 @@ class Handler extends ExceptionHandler
 
     /**
      * Register the exception handling callbacks for the application.
+     *
+     * @return void
      */
-    public function register(): void
+    public function register()
     {
-        $this->reportable(function (Throwable $e): void {
+        $this->reportable(function (Throwable $e) {
+            //
         });
     }
 }
