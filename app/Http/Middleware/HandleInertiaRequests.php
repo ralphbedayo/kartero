@@ -1,5 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace App\Http\Middleware;
 
 use Illuminate\Http\Request;
@@ -11,6 +23,7 @@ class HandleInertiaRequests extends Middleware
      * The root template that's loaded on the first page visit.
      *
      * @see https://inertiajs.com/server-side-setup#root-template
+     *
      * @var string
      */
     protected $rootView = 'app';
@@ -19,8 +32,6 @@ class HandleInertiaRequests extends Middleware
      * Determines the current asset version.
      *
      * @see https://inertiajs.com/asset-versioning
-     * @param  \Illuminate\Http\Request  $request
-     * @return string|null
      */
     public function version(Request $request): ?string
     {
@@ -31,34 +42,32 @@ class HandleInertiaRequests extends Middleware
      * Defines the props that are shared by default.
      *
      * @see https://inertiajs.com/shared-data
-     * @param  \Illuminate\Http\Request  $request
-     * @return array
      */
     public function share(Request $request): array
     {
         return array_merge(parent::share($request), [
-            //@todo update this
-//            'auth' => function () use ($request) {
-//                return [
-//                    'user' => $request->user() ? [
-//                        'id' => $request->user()->id,
-//                        'first_name' => $request->user()->first_name,
-//                        'last_name' => $request->user()->last_name,
-//                        'email' => $request->user()->email,
-//                        'owner' => $request->user()->owner,
-//                        'account' => [
-//                            'id' => $request->user()->account->id,
-//                            'name' => $request->user()->account->name,
-//                        ],
-//                    ] : null,
-//                ];
-//            },
-//            'flash' => function () use ($request) {
-//                return [
-//                    'success' => $request->session()->get('success'),
-//                    'error' => $request->session()->get('error'),
-//                ];
-//            },
+            // @todo update this
+            //            'auth' => function () use ($request) {
+            //                return [
+            //                    'user' => $request->user() ? [
+            //                        'id' => $request->user()->id,
+            //                        'first_name' => $request->user()->first_name,
+            //                        'last_name' => $request->user()->last_name,
+            //                        'email' => $request->user()->email,
+            //                        'owner' => $request->user()->owner,
+            //                        'account' => [
+            //                            'id' => $request->user()->account->id,
+            //                            'name' => $request->user()->account->name,
+            //                        ],
+            //                    ] : null,
+            //                ];
+            //            },
+            //            'flash' => function () use ($request) {
+            //                return [
+            //                    'success' => $request->session()->get('success'),
+            //                    'error' => $request->session()->get('error'),
+            //                ];
+            //            },
         ]);
     }
 }

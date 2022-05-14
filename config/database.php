@@ -1,9 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of PHP CS Fixer.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *     Dariusz Rumiński <dariusz.ruminski@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 use Illuminate\Support\Str;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
@@ -34,7 +45,6 @@ return [
     */
 
     'connections' => [
-
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),
@@ -90,7 +100,6 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
-
     ],
 
     /*
@@ -118,7 +127,6 @@ return [
     */
 
     'redis' => [
-
         'client' => env('REDIS_CLIENT', 'phpredis'),
 
         'options' => [
@@ -141,7 +149,5 @@ return [
             'port' => env('REDIS_PORT', '6379'),
             'database' => env('REDIS_CACHE_DB', '1'),
         ],
-
     ],
-
 ];
