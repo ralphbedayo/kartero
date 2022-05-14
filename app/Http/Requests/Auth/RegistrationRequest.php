@@ -27,7 +27,7 @@ class RegistrationRequest extends FormRequest
         return [
             'first_name'            => 'required|string|max:24',
             'last_name'             => 'required|string|max:24',
-            'email'                 => 'required|string|email|max:48',
+            'email'                 => 'required|string|unique:users,email|email|max:48',
             'password'              => ['required', 'confirmed', 'max:16', Password::min(8)->uncompromised()],
             'password_confirmation' => 'required|min:8|max:16',
         ];
