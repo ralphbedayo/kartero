@@ -18,6 +18,7 @@ jobs:
             - name: Run php-cs-fixer
               uses: docker://oskarstark/php-cs-fixer-ga
 
-            - uses: stefanzweifel/git-auto-commit-action@v4
-              with:
-                  commit_message: Apply php-cs-fixer changes
+#           uncomment this once decided to use auto-commit
+#            - uses: stefanzweifel/git-auto-commit-action@v4
+#              with:
+#                  commit_message: Apply php-cs-fixer changes
