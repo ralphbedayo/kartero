@@ -17,7 +17,7 @@ export default {
     props: {
         messageModel: String
     },
-    emits: ['update:messageModel', 'send'],
+    emits: ['update:messageModel', 'message-sent'],
     data() {
         return {
             quillEditor: null,
@@ -43,7 +43,7 @@ export default {
                         bindings: {
                             enter: {
                                 key: KEYBOARD_ENTER_KEY_CODE,
-                                handler: this.sendContent
+                                handler: this.sendMessage
                             }
                         }
                     }
@@ -72,13 +72,9 @@ export default {
             // Delta reference: https://quilljs.com/docs/delta/
 
             this.$emit('update:messageModel', delta);
-            // console.log(['caught delta : ', delta]);
-            // console.log(['caught oldDelta: ', oldDelta]);
-            // console.log('caught source: ' + source);
         },
-        sendContent() {
-            this.$emit('send', this.quillEditor.getContents());
-            console.log(this.quillEditor.getContents());
+        sendMessage() {
+            this.$emit('message-sent', this.quillEditor.getContents());
         }
     },
     mounted() {

@@ -11,7 +11,6 @@
         </div>
         <div class="basis-1/5 min-h-full" style="">
             <div class="pt-2">
-
                 <Right/>
             </div>
         </div>

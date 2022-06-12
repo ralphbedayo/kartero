@@ -19,4 +19,5 @@ mix.webpackConfig(config)
     .postCss('resources/css/app.css', 'public/css', [
         require("tailwindcss"),
     ])
+    .extract(['vue'])
     .version();
