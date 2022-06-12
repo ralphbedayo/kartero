@@ -1,6 +1,6 @@
 <template>
     <div class="font-bold text-center text-white" :class="class">
-        <h1 class="text-3xl">
+        <h1 :class="textClass">
             <Logo/>
             KARTERO
         </h1>
@@ -17,7 +17,8 @@ export default {
         Logo,
     },
     props: {
-        class: String
+        class: String,
+        textClass: String,
     }
 }
 </script>

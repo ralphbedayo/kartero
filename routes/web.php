@@ -37,7 +37,7 @@ Route::group(['namespace' => 'Inertia'], function () {
                 'controller' => 'LoginController',
                 'prefix'     => '/login'
             ], function () {
-                Route::get('/', 'index')->name('login.index');
+                Route::get('/', 'index')->name('login');
                 Route::post('/', 'store')->name('login.store');
             });
 
@@ -47,7 +47,7 @@ Route::group(['namespace' => 'Inertia'], function () {
                 'controller' => 'RegistrationController',
                 'prefix'     => '/register'
             ], function () {
-                Route::get('/', 'index')->name('register.index');
+                Route::get('/', 'index')->name('register');
                 Route::post('/', 'store')->name('register.store');
             });
 
@@ -57,6 +57,14 @@ Route::group(['namespace' => 'Inertia'], function () {
     // Authenticated Pages
     Route::group(['middleware' => ['auth']], function () {
         // Home
+        Route::group([
+            'namespace'  => 'Home',
+            'controller' => 'HomeController',
+            'prefix'     => '/home'
+        ], function () {
+            Route::get('/', 'index')->name('register.index');
+            Route::post('/', 'store')->name('register.store');
+        });
 
     });
 });

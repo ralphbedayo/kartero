@@ -8,4 +8,5 @@ class PageNames
 
     public const REGISTER = 'Register';
 
+    public const HOME = 'Home';
 }

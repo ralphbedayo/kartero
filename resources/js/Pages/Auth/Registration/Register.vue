@@ -7,7 +7,7 @@
         <div class="pt-12">
             <div class="flex justify-center">
                 <div class="basis-1/4 flex-col z-50">
-                    <Brand class="mb-6"/>
+                    <Brand class="mb-6" text-class="text-3xl"/>
                     <Card class="bg-white">
                         <div class="mb-5">
                             <h1 class="text-4xl text-black text-center">Create your account</h1>
