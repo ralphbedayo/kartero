@@ -4,7 +4,7 @@
         <div class="p-2 flex justify-between border-b">
             <div class="flex flex-row">
                 <div>
-                    <img class="object-scale-down h-10 w-10 rounded-full" src="@/../img/user-splash.webp"
+                    <img class="object-scale-down h-10 w-10 rounded-full" src="@img/user-splash.webp"
                          alt="user splash here">
                 </div>
                 <div class="ml-2">

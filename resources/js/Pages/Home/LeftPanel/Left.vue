@@ -5,7 +5,7 @@
                 <div>
                     <div>
                         <div>
-                            <img class="object-scale-down h-10 w-10 rounded-full" src="../../../../img/user-splash.webp"
+                            <img class="object-scale-down h-10 w-10 rounded-full" src="@img/user-splash.webp"
                                  alt="user splash here">
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                 <div class="w-full flex flex-row py-2 rounded-lg hover:bg-gray-200 cursor-pointer" v-for="n in 5">
                     <div class="basis-1/6">
                         <div class="flex justify-center">
-                            <img class="object-scale-down h-10 w-10 rounded-full" src="../../../../img/user-splash.webp"
+                            <img class="object-scale-down h-10 w-10 rounded-full" src="@img/user-splash.webp"
                                  alt="user splash here">
                         </div>
                     </div>
