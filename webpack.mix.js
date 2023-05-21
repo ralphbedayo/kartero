@@ -13,11 +13,32 @@ const mix = require('laravel-mix');
 
 let config = require('./webpack.config');
 
+let dependencyVendors = [
+    // Dependencies
+    "@headlessui/vue",
+    "@heroicons/vue",
+    "@inertiajs/inertia",
+    "@inertiajs/inertia-vue3",
+    "@inertiajs/progress",
+    "quill",
+    "quill-delta-to-html",
+    "uuid",
+    "vue",
+
+    // Dev Dependencies
+    "axios",
+    "laravel-mix",
+    "lodash",
+    "postcss",
+    "tailwindcss",
+    "vue-loader",
+];
+
 mix.webpackConfig(config)
     .js('resources/js/app.js', 'public/js')
     .vue()
     .postCss('resources/css/app.css', 'public/css', [
         require("tailwindcss"),
     ])
-    .extract(['vue'])
+    .extract(dependencyVendors)
     .version();

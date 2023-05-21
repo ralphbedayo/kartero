@@ -10,7 +10,7 @@
         <div class="flex flex-grow flex-row p-1 mr-3 bg-gray-200 border-0 rounded-lg max-w-full w-full">
 
             <div class="max-w-full w-full inline-block">
-                <MessageEditor @message-send="logMessage"/>
+                <MessageEditor @quill-change="quillChange" :external-submit="'external-submit'" @submit="submitMessage"/>
             </div>
             <div>
                 <EmojiHappyIcon class="h-7 w-7" />
@@ -36,9 +36,8 @@ import MessageEditor from "./MessageEditor";
 
 export default  {
     name: "Footer",
-    props: {
-        message: String
-    },
+    props: ['message', 'external-submit'],
+    emits: ['submit', 'editor-change'],
     components: {
         // Hero Icons
         PaperClipIcon,
@@ -49,9 +48,19 @@ export default  {
         // Components
         MessageEditor
     },
+    data() {
+        return {
+            messageModel: {}
+        }
+    },
     methods: {
-        logMessage(e) {
-            console.log(e);
+        quillChange(delta, oldDelta, source) {
+            this.$emit('editor-change', delta, oldDelta, source);
+            // Or append to change collector
+        },
+        submitMessage(delta) {
+            this.$emit('submit', delta);
+            //todo reset editor after submitting
         }
     }
 }

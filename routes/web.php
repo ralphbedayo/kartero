@@ -37,8 +37,8 @@ Route::group(['namespace' => 'Inertia'], function () {
                 'controller' => 'LoginController',
                 'prefix'     => '/login'
             ], function () {
-                Route::get('/', 'index')->name('login');
-                Route::post('/', 'store')->name('login.store');
+                Route::get('/', 'index')->name('guest.login');
+                Route::post('/', 'store')->name('guest.login.store');
             });
 
             // Register
@@ -47,8 +47,8 @@ Route::group(['namespace' => 'Inertia'], function () {
                 'controller' => 'RegistrationController',
                 'prefix'     => '/register'
             ], function () {
-                Route::get('/', 'index')->name('register');
-                Route::post('/', 'store')->name('register.store');
+                Route::get('/', 'index')->name('guest.register');
+                Route::post('/', 'store')->name('guest.register.store');
             });
 
         });
@@ -69,6 +69,6 @@ Route::group(['namespace' => 'Inertia'], function () {
     });
 });
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::get('/test', function () {
+    return view('test');
+});

@@ -14,10 +14,8 @@ import {KEYBOARD_ENTER_KEY_CODE} from '@/Constants/KeyboardConstants';
 
 export default {
     name: "MessageEditor",
-    props: {
-        messageModel: String
-    },
-    emits: ['update:messageModel', 'message-sent'],
+    emits: ['quill-change', 'submit'],
+    props: ['external-submit'],
     data() {
         return {
             quillEditor: null,
@@ -43,7 +41,7 @@ export default {
                         bindings: {
                             enter: {
                                 key: KEYBOARD_ENTER_KEY_CODE,
-                                handler: this.sendMessage
+                                handler: this.submitMessage
                             }
                         }
                     }
@@ -70,15 +68,33 @@ export default {
         },
         editorInput(delta, oldDelta, source) {
             // Delta reference: https://quilljs.com/docs/delta/
-
-            this.$emit('update:messageModel', delta);
+            this.$emit('quill-change', delta, oldDelta, source);
         },
-        sendMessage() {
-            this.$emit('message-sent', this.quillEditor.getContents());
+        submitMessage() {
+            if (this.isEmpty()) {
+                return;
+            }
+
+            this.$emit('submit', this.quillEditor.getContents());
+
+            this.clearEditor();
+        },
+        isEmpty() {
+            let realLength = this.quillEditor.getText().trim().length;
+
+            return realLength === 0;
+        },
+        clearEditor() {
+            this.quillEditor.setText('');
         }
     },
     mounted() {
         this.initializeQuill();
+    },
+    watch: {
+        "external-submit": function () {
+            this.submitMessage();
+        }
     }
 }
 </script>

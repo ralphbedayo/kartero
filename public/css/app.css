@@ -860,8 +860,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex-row{
   flex-direction: row;
 }
+.flex-row-reverse{
+  flex-direction: row-reverse;
+}
 .flex-col{
   flex-direction: column;
+}
+.flex-col-reverse{
+  flex-direction: column-reverse;
 }
 .flex-wrap{
   flex-wrap: wrap;
@@ -884,11 +890,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-between{
   justify-content: space-between;
 }
+.gap-y-2{
+  row-gap: 0.5rem;
+}
 .overflow-hidden{
   overflow: hidden;
 }
 .overflow-x-auto{
   overflow-x: auto;
+}
+.overflow-y-auto{
+  overflow-y: auto;
 }
 .rounded-full{
   border-radius: 9999px;
@@ -954,6 +966,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-gray-200{
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+.bg-indigo-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(79 70 229 / var(--tw-bg-opacity));
 }
 .bg-clip-padding{
   background-clip: padding-box;
