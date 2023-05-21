@@ -34,7 +34,7 @@
 
 <script>
 
-import PanelBody from './PanelBody/PanelBody';
+import PanelBody from './PanelBody/PanelBody.vue';
 
 export default {
     name: "Middle",

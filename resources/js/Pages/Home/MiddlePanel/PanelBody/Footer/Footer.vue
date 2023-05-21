@@ -31,7 +31,7 @@ import {
     EmojiHappyIcon
 } from '@heroicons/vue/outline'
 
-import MessageEditor from "./MessageEditor";
+import MessageEditor from "./MessageEditor.vue";
 
 
 export default  {

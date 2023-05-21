@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import Layout from '../../Shared/Layout'
+import Layout from '../../Shared/Layout.vue'
 import {Head} from '@inertiajs/inertia-vue3'
 
 export default {

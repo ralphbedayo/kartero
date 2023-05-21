@@ -13,7 +13,7 @@
 
 <script>
 import { Link } from '@inertiajs/inertia-vue3'
-import Navbar from "./Navbar";
+import Navbar from "./Navbar.vue";
 
 export default {
     name: "Layout",

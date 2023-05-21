@@ -60,11 +60,11 @@
 <script>
 import {Head,Link} from "@inertiajs/inertia-vue3";
 
-import Brand from "@/Shared/Brand";
-import Card from "@/Shared/Design/Card";
-import GradientBackgroundHalf from "@/Shared/Design/GradientBackgroundHalf";
-import LoadingButton from "@/Shared/Utils/LoadingButton";
-import TextInput from "@/Shared/Inputs/TextInput";
+import Brand from "@/Shared/Brand.vue";
+import Card from "@/Shared/Design/Card.vue";
+import GradientBackgroundHalf from "@/Shared/Design/GradientBackgroundHalf.vue";
+import LoadingButton from "@/Shared/Utils/LoadingButton.vue";
+import TextInput from "@/Shared/Inputs/TextInput.vue";
 
 export default {
     name: "Register",

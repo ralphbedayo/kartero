@@ -19,9 +19,9 @@
 </template>
 
 <script>
-import Left from "@/Pages/Home/LeftPanel/Left";
-import Right from "@/Pages/Home/RightPanel/Right";
-import Middle from "@/Pages/Home/MiddlePanel/Middle";
+import Left from "@/Pages/Home/LeftPanel/Left.vue";
+import Right from "@/Pages/Home/RightPanel/Right.vue";
+import Middle from "@/Pages/Home/MiddlePanel/Middle.vue";
 
 export default {
     name: "Home",

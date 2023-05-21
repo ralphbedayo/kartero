@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import Footer from "./Footer/Footer";
+import Footer from "./Footer/Footer.vue";
 import {convertDelta} from '@/Utils/DeltaConverter';
 import {USER_GROUP_CURRENT_USER, USER_GROUP_OTHER_USER} from "@/Constants/CommonConstants";
 import {SEND_STATUS_SENDING} from "@/Constants/MessageConstants";
