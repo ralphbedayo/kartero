@@ -50,7 +50,7 @@
 
 <script>
 import { Inertia } from '@inertiajs/inertia'
-import Logo from "@/Shared/Design/Logo";
+import Logo from "@/Shared/Design/Logo.vue";
 
 //@todo update this later
 const navigation = [

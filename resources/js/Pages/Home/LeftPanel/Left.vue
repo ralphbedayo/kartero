@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import Brand from "@/Shared/Brand";
+import Brand from "@/Shared/Brand.vue";
 
 export default {
     name: "Left",

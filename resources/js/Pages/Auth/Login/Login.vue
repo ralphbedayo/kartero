@@ -43,12 +43,12 @@
 
 <script>
 import {Head, Link} from '@inertiajs/inertia-vue3'
-import Brand from "@/Shared/Brand";
-import Card from "@/Shared/Design/Card";
-import Logo from "@/Shared/Design/Logo";
-import LoadingButton from "@/Shared/Utils/LoadingButton";
-import GradientBackgroundHalf from "@/Shared/Design/GradientBackgroundHalf";
-import TextInput from "@/Shared/Inputs/TextInput";
+import Brand from "@/Shared/Brand.vue";
+import Card from "@/Shared/Design/Card.vue";
+import Logo from "@/Shared/Design/Logo.vue";
+import LoadingButton from "@/Shared/Utils/LoadingButton.vue";
+import GradientBackgroundHalf from "@/Shared/Design/GradientBackgroundHalf.vue";
+import TextInput from "@/Shared/Inputs/TextInput.vue";
 
 export default {
     name: "Login",

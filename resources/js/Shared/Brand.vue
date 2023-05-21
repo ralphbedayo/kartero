@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Logo from "@/Shared/Design/Logo";
+import Logo from "@/Shared/Design/Logo.vue";
 
 export default {
     name: "Brand",
